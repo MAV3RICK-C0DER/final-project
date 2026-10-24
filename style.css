@@ -81,6 +81,8 @@ h1, h2, h3, h4, h5, h6{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .logo{
@@ -155,6 +157,79 @@ li{
   cursor: pointer;
 }
 
+.btn__menu{
+  background-color: transparent;
+  border: none;
+  transition: all 300ms ease;
+  display: none;
+}
+
+.menu{
+  visibility: hidden;
+}
+
+.menu__backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 378px;
+  margin: 24px 16px;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 8px;
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(300%);
+  transition: all 300ms ease;
+}
+
+.btn__menu--close{
+  position: fixed;
+  top: 24px;
+  right: 18px;
+}
+
+.menu__open{
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__open .menu{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu__links{
+  width: 100%;
+  height: 100%;
+  display: flex;flex-direction: column;
+  align-items: center;
+}
+
+.menu__link{
+  color: #1a202c;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+}
+
+.menu__link--primary{
+  color: #f7fafc;
+  padding: 12px 32px;
+  background-color: #6415ff;
+  border-radius: 500px;
+  border: none;
+}
+
+
 /* LANDING */
 .purple{
   color: #6415FF;
@@ -162,7 +237,7 @@ li{
 
 .landing__container{
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1204px;
   display: flex;
   padding: 96px 0;
 }
@@ -731,6 +806,9 @@ padding: 96px 0;
   display: flex;
   justify-content: space-between;
   position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+
 }
 
 
@@ -1186,6 +1264,7 @@ padding: 96px 0;
   background-color: rgb(100 21 255);
   max-width: 1280px;
   max-height: 282px;
+  margin: 0 auto;
   overflow: hidden;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -1405,4 +1484,21 @@ padding: 96px 0;
   height: 320px;
   width: 320px;
   opacity: 0.5;
+}
+
+
+/* MEDIA */
+@media (max-width: 1024px){
+  .btn__menu {
+    display: block;
+  }
+
+  .nav__links{
+    display: none;
+  }
+
+  .landing__container{
+    width: 100%;
+    margin: 0 auto;
+  }
 }
